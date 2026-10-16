@@ -1,0 +1,1871 @@
+{
+    "__UNDERSCORES IN FRONT MEANS IGNORE THE KEY, this is just to keep a valid JSON file": "",
+    "__!!! check and beautify JSON files with http://codebeautify.org/jsonviewer !!!": "",
+    "__this is the path which is prepended to 'include-from-file' paths, if they are relative paths": "",
+    "_include-file-base-path": "../",
+    "__user defined crops section to be used via references": "",
+    "crops": {
+        "SM": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/maize.json"],
+				"cultivar": ["include-from-file", "crops/maize/silage-maize.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/maize.json"]
+		
+		},
+		"WR": {
+			"is-winter-crop": true,
+			"cropParams": {
+				"species": ["include-from-file", "crops/rye.json"],
+				"cultivar": ["include-from-file", "crops/rye/winter-rye.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/rye.json"]
+		
+		},
+		"K": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/potato.json"],
+				"cultivar": ["include-from-file", "crops/potato/moderately-early-potato.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/potato.json"]
+		
+		},
+		"SW": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/wheat.json"],
+				"cultivar": ["include-from-file", "crops/wheat/spring-wheat.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/wheat.json"]
+		
+		},
+		"ZR": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/sugar-beet.json"],
+				"cultivar": ["include-from-file", "crops/sugar-beet/.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/beet.json"]
+		
+		},
+		"SG": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/barley.json"],
+				"cultivar": ["include-from-file", "crops/barley/spring-barley.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/barley.json"]
+		
+		},
+		"WW": {
+			"is-winter-crop": true,
+			"cropParams": {
+				"species": ["include-from-file", "crops/wheat.json"],
+				"cultivar": ["include-from-file", "crops/wheat/winter-wheat.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/wheat.json"]
+		
+		},
+		"OEL": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/phacelia.json"],
+				"cultivar": ["include-from-file", "crops/phacelia/.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/phacelia/cover.json"]
+		
+		},
+		"ERB": {
+			"is-winter-crop": false,
+			"cropParams": {
+				"species": ["include-from-file", "crops/oat-compound.json"],
+				"cultivar": ["include-from-file", "crops/oat-compound/.json"]
+			},
+			"residueParams": ["include-from-file", "crop-residues/oat.json"]
+		
+		}
+},
+    "__user defined fertilizer parameteres section to be used via references": "",
+    "fert-params": {
+        "AN": ["include-from-file", "mineral-fertilisers/AN.json"],
+        "CAM": ["include-from-file", "organic-fertilisers/CAM.json"],
+        "WS": ["include-from-file", "organic-fertilisers/WS.json"]
+    },
+        "cropRotation": [
+            {
+                "worksteps": [
+                    {
+                        "date": "1963-04-25",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1963-05-09",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "1963-05-14",
+                        "type": "MineralFertilization",
+                        "amount": [160, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1963-09-02",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1963-09-07",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1963-09-12",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1963-09-25",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "1964-03-11",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1964-07-18",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1964-11-02",
+                        "type": "Tillage",
+                        "depth": [0.24, "m"]
+                    },
+                    {
+                        "date": "1965-04-14",
+                        "type": "Tillage",
+                        "depth": [0.18, "m"]
+                    },
+                    {
+                        "date": "1965-05-05",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1965-05-12",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1965-05-21",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1965-05-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1965-09-23",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1965-09-29",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "1966-03-04",
+                        "type": "MineralFertilization",
+                        "amount": [60, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1966-04-28",
+                        "type": "MineralFertilization",
+                        "amount": [60, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1966-07-30",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1966-11-08",
+                        "type": "Tillage",
+                        "depth": [0.24, "m"]
+                    },
+                    {
+                        "date": "1967-04-19",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1967-05-03",
+                        "type": "MineralFertilization",
+                        "amount": [105, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1967-05-31",
+                        "type": "MineralFertilization",
+                        "amount": [105, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1967-09-26",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1967-11-15",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1968-03-22",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1968-03-25",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SW"]
+                    },
+                    {
+                        "date": "1968-04-22",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1968-08-12",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1968-10-30",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1969-04-21",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1969-05-07",
+                        "type": "MineralFertilization",
+                        "amount": [135, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1969-06-11",
+                        "type": "MineralFertilization",
+                        "amount": [135, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1969-10-20",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1969-10-29",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1970-04-13",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1970-05-06",
+                        "type": "MineralFertilization",
+                        "amount": [125, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1970-10-22",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1970-10-23",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1971-04-22",
+                        "type": "MineralFertilization",
+                        "amount": [210, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1971-04-23",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "1971-08-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1971-09-16",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1971-09-22",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "1972-03-07",
+                        "type": "MineralFertilization",
+                        "amount": [125, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1972-08-02",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1972-11-21",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1973-04-13",
+                        "type": "MineralFertilization",
+                        "amount": [210, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1973-04-17",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1973-09-19",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1973-10-05",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1973-10-10",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "1974-03-21",
+                        "type": "MineralFertilization",
+                        "amount": [150, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1974-08-24",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1974-11-14",
+                        "type": "Tillage",
+                        "depth": [0.24, "m"]
+                    },
+                    {
+                        "date": "1975-04-15",
+                        "type": "MineralFertilization",
+                        "amount": [135, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1975-04-22",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1975-06-10",
+                        "type": "MineralFertilization",
+                        "amount": [135, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1975-10-31",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1975-11-14",
+                        "type": "Tillage",
+                        "depth": [0.24, "m"]
+                    },
+                    {
+                        "date": "1976-04-02",
+                        "type": "MineralFertilization",
+                        "amount": [50, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1976-04-05",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1976-05-26",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1976-07-31",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1976-11-11",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1977-03-23",
+                        "type": "MineralFertilization",
+                        "amount": [350, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1977-04-18",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1977-10-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1977-11-11",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1978-03-29",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1978-04-04",
+                        "type": "MineralFertilization",
+                        "amount": [125, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1978-08-07",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1978-10-30",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1979-04-06",
+                        "type": "MineralFertilization",
+                        "amount": [350, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1979-04-26",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1979-11-12",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1979-11-16",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1980-04-07",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1980-04-08",
+                        "type": "MineralFertilization",
+                        "amount": [125, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1980-08-11",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1980-11-14",
+                        "type": "Tillage",
+                        "depth": [0.3, "m"]
+                    },
+                    {
+                        "date": "1981-04-06",
+                        "type": "MineralFertilization",
+                        "amount": [175, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1981-04-21",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1981-06-03",
+                        "type": "MineralFertilization",
+                        "amount": [175, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1981-10-28",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1981-11-10",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1982-03-26",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1982-03-29",
+                        "type": "MineralFertilization",
+                        "amount": [62.5, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1982-06-02",
+                        "type": "MineralFertilization",
+                        "amount": [62.5, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1982-08-02",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1982-11-16",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1983-04-07",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1983-04-26",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1983-09-19",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1983-10-05",
+                        "type": "Tillage",
+                        "depth": [0.2, "m"]
+                    },
+                    {
+                        "date": "1983-10-06",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "1984-03-28",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1984-05-08",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1984-06-13",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1984-08-09",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1984-11-03",
+                        "type": "Tillage",
+                        "depth": [0.3, "m"]
+                    },
+                    {
+                        "date": "1985-04-17",
+                        "type": "MineralFertilization",
+                        "amount": [150, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1985-04-19",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1985-06-06",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1985-10-16",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1985-11-04",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1986-04-02",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1986-04-03",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1986-06-10",
+                        "type": "MineralFertilization",
+                        "amount": [50, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1986-07-29",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1986-10-22",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1987-04-15",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1987-04-22",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1987-09-15",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1987-09-22",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1987-09-28",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "1988-03-31",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1988-05-02",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1988-05-16",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1988-07-22",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1988-10-19",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1989-03-17",
+                        "type": "MineralFertilization",
+                        "amount": [150, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1989-03-28",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1989-05-25",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1989-10-24",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1989-11-03",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1990-03-19",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "1990-03-22",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1990-05-28",
+                        "type": "MineralFertilization",
+                        "amount": [50, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1990-08-06",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1990-11-05",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1991-03-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1991-04-11",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1991-10-10",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1991-10-14",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1991-10-15",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "1992-04-07",
+                        "type": "MineralFertilization",
+                        "amount": [175, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1992-07-20",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1992-10-15",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1993-04-15",
+                        "type": "MineralFertilization",
+                        "amount": [150, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1993-04-22",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ZR"]
+                    },
+                    {
+                        "date": "1993-06-12",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1993-09-20",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1993-10-10",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1993-10-14",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "1994-04-18",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1994-05-09",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1994-06-01",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1994-08-02",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1994-10-30",
+                        "type": "Tillage",
+                        "depth": [0.3, "m"]
+                    },
+                    {
+                        "date": "1995-05-08",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "1995-06-20",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1995-07-05",
+                        "type": "MineralFertilization",
+                        "amount": [120, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1995-09-20",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1995-10-02",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "1995-10-04",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "1996-04-17",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1996-05-15",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1996-08-20",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1996-11-05",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1997-04-02",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "OEL"]
+                    },
+                    {
+                        "date": "1997-04-03",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1997-09-02",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1997-09-18",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "1997-09-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "1998-03-27",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1998-04-30",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1998-08-06",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1998-10-15",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "1999-04-14",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "1999-04-15",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "1999-09-07",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "1999-11-08",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2000-03-24",
+                        "type": "MineralFertilization",
+                        "amount": [50, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2000-04-19",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "2000-05-17",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2000-08-22",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2000-10-23",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2001-04-03",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ERB"]
+                    },
+                    {
+                        "date": "2001-04-04",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2001-07-24",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2001-09-25",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2001-10-05",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "2002-03-12",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2002-04-08",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2002-06-03",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2002-07-30",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2002-10-17",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2003-04-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "2003-04-30",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2003-08-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2003-09-26",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2003-09-30",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "2004-03-24",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2004-04-21",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2004-05-25",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2004-08-06",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2004-10-22",
+                        "type": "Tillage",
+                        "depth": [0.3, "m"]
+                    },
+                    {
+                        "date": "2005-04-04",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "OEL"]
+                    },
+                    {
+                        "date": "2005-04-06",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2005-08-31",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2005-09-22",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2005-09-23",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "2006-04-05",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2006-04-28",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2006-06-02",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2006-07-31",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2006-10-19",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2007-03-15",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2007-04-10",
+                        "type": "MineralFertilization",
+                        "amount": [175, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2007-04-13",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "2007-08-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2008-03-11",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2008-03-28",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "2008-03-31",
+                        "type": "MineralFertilization",
+                        "amount": [50, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2008-05-16",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2008-08-06",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2008-11-10",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2009-04-06",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ERB"]
+                    },
+                    {
+                        "date": "2009-04-08",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2009-07-30",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2009-09-18",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2009-09-25",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "2010-03-17",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2010-04-14",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2010-05-12",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2010-07-28",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2010-10-15",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2011-04-26",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "2011-04-27",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2011-09-22",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2011-09-26",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2011-09-28",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "2012-03-15",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2012-04-10",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2012-05-14",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2012-07-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2012-10-17",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2013-04-16",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "OEL"]
+                    },
+                    {
+                        "date": "2013-04-17",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2013-08-16",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2013-09-25",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2013-09-30",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "2014-03-20",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2014-04-10",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2014-05-12",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2014-08-08",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2014-11-11",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2015-04-20",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2015-04-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "K"]
+                    },
+                    {
+                        "date": "2015-09-03",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2016-03-22",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2016-03-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "2016-04-18",
+                        "type": "MineralFertilization",
+                        "amount": [50, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2016-06-10",
+                        "type": "MineralFertilization",
+                        "amount": [75, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2016-08-15",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2016-10-10",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2017-03-29",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "ERB"]
+                    },
+                    {
+                        "date": "2017-03-30",
+                        "type": "MineralFertilization",
+                        "amount": [80, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2017-07-21",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2017-09-25",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2017-09-27",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WW"]
+                    },
+                    {
+                        "date": "2018-04-04",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2018-04-24",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2018-05-25",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2018-07-16",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2019-04-24",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2019-04-26",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "2019-05-02",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"
+                        ]
+                    },
+                    {
+                        "date": "2019-08-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2019-09-19",
+                        "type": "Tillage",
+                        "depth": [0.22, "m"]
+                    },
+                    {
+                        "date": "2019-10-07",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "2020-03-17",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2020-04-21",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2020-06-03",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2020-07-27",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2020-10-27",
+                        "type": "Tillage",
+                        "depth": [0.21, "m"]
+                    },
+                    {
+                        "date": "2021-04-12",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "OEL"]
+                    },
+                    {
+                        "date": "2021-04-13",
+                        "type": "MineralFertilization",
+                        "amount": [100, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2021-09-20",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2021-09-23",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2021-09-24",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "WR"]
+                    },
+                    {
+                        "date": "2022-03-21",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2022-04-26",
+                        "type": "MineralFertilization",
+                        "amount": [70, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2022-05-25",
+                        "type": "MineralFertilization",
+                        "amount": [35, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"
+                        ]
+                    },
+                    {
+                        "date": "2022-08-02",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2023-03-30",
+                        "type": "Tillage",
+                        "depth": [0.23, "m"]
+                    },
+                    {
+                        "date": "2023-05-03",
+                        "type": "MineralFertilization",
+                        "amount": [200, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2023-05-04",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SM"]
+                    },
+                    {
+                        "date": "2023-09-05",
+                        "type": "Harvest"
+                    }
+                ]
+            },
+            {
+                "worksteps": [
+                    {
+                        "date": "2023-10-30",
+                        "type": "Tillage",
+                        "depth": [0.25, "m"]
+                    },
+                    {
+                        "date": "2024-03-27",
+                        "type": "Sowing",
+                        "crop": ["ref", "crops", "SG"]
+                    },
+                    {
+                        "date": "2024-04-10",
+                        "type": "MineralFertilization",
+                        "amount": [125, "kg N"],
+                        "partition": ["ref", "fert-params", "AN"]
+                    },
+                    {
+                        "date": "2024-07-31",
+                        "type": "Harvest"
+                    }
+                ]
+            }
+        ],
+        "__general crop parameters for the monica model": "",
+        "CropParameters": ["include-from-file", "general/crop.json"]
+    }
+

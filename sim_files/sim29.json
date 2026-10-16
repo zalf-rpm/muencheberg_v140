@@ -1,0 +1,108 @@
+{
+    "__UNDERSCORES IN FRONT MEANS IGNORE THE KEY, this is just to keep a valid JSON file": "",
+    "__!!! check and beautify JSON files with http://codebeautify.org/jsonviewer or https://jsonformatter.curiousconcept.com# !!!": "",
+    "__define paths to crop.json, site.json and climate.csv, no path means read from directory where sim.json (THIS file) has been found; files names are abitrary": "",
+    "crop.json": "../crop_files/crop_25.json",
+    "site.json": "../site_files/site_87.json",
+    "climate.csv": "../climate_MUE.csv",
+    "__options for reading the climate csv file, how many header lines to read, which separator to use and optional conversion of headers to internally known names": "",
+    "climate.csv-options": {
+        "__given the start and end date, monica will run just this time range, else the full time range given by supplied climate data": "",
+        "start-date": "1963-01-01",
+        "end-date": "2024-12-31",
+        "no-of-climate-file-header-lines": 2,
+        "csv-separator": ",",
+        "header-to-acd-names": {
+            "DE-date": "de-date"
+        }
+    },
+    "__set to 'true' to enable debug outputs and also write 'inputs.json' file into output directory": "",
+    "debug?": false,
+    "__the include file base path to be used if no other value is in crop/site.json specified": "",
+    "include-file-base-path": "${MONICA_PARAMETERS}/",
+    "__configuration options for the monica outputs": "",
+    "output": {
+        "write-file?": false,
+        "__path to the directory file output is written to, when enabled (either via debug?: true or write-file?: true)": "",
+        "path-to-output": "./",
+        "file-name": "out.csv",
+        "__how to write and what to include in monica CSV output": "",
+        "csv-options": {
+            "include-header-row": true,
+            "include-units-row": true,
+            "include-aggregation-rows": true,
+            "csv-separator": ";"
+        },
+        "__what data to include in the monica output according to the events defined by the keys": "",
+        "events": [
+            "crop",
+            [
+                "Crop",
+                ["CM-count|crop-counter", "LAST"],
+                ["Year|harv-year", "LAST"],
+                ["Yield", "LAST"],
+                ["AbBiom", "LAST"],
+                ["Stage|stage-harv", "LAST"],
+                ["RelDev|reldev-harv", "LAST"],
+                ["LAI|max-LAI", "MAX"],
+                ["TraDef", "AVG"],
+                ["NDef", "AVG"],
+                ["HeatRed", "LAST"],
+                ["FrostRed", "LAST"]
+            ],
+            "daily",
+            [
+                "Crop",
+                "CM-count",
+                "Date",
+                "Yield",
+                "AbBiom",
+                "Stage",
+                "RelDev",
+                "LAI",
+                "TraDef",
+                "NDef",
+                "HeatRed",
+                "FrostRed",
+
+                ["SOC|SOC_0_30_kgkg", [1, 3, "AVG"]],
+                ["SOC-X-Y|SOC_0_30_g_m2", [1, 3, "SUM"]]
+            ]
+        ]
+    },
+    "__SHOULDN'T BE CHANGED CURRENTLY, as monica assumes partly 20 layers and 10cm layer thickness": "",
+    "NumberOfLayers": 20,
+    "LayerThickness": [0.1, "m"],
+    "__turn on/off some model switches": "",
+    "UseSecondaryYields": true,
+    "NitrogenResponseOn": true,
+    "WaterDeficitResponseOn": true,
+    "EmergenceMoistureControlOn": true,
+    "EmergenceFloodingControlOn": true,
+    "__if monica internal automatic irrigation is to be used, configure donations here": "",
+    "UseAutomaticIrrigation": false,
+    "AutoIrrigationParams": {
+        "irrigationParameters": {
+            "nitrateConcentration": [0, "mg dm-3"],
+            "sulfateConcentration": [0, "mg dm-3"]
+        },
+        "amount": [17, "mm"],
+        "threshold": 0.35
+    },
+    "__if monica internal automatic fertilizing via NMin method is to be used, configure here": "",
+    "UseNMinMineralFertilisingMethod": false,
+    "NMinUserParams": {
+        "min": 40,
+        "max": 120,
+        "delayInDays": 10
+    },
+    "NMinFertiliserPartition": ["include-from-file", "mineral-fertilisers/AN.json"],
+    "_NMinFertiliserPartition": {
+        "id": "my AN",
+        "name": "my very own ammonium nitrate variant",
+        "Carbamid": 0,
+        "NH4": 0.5,
+        "NO3": 0.5
+    },
+    "JulianDayAutomaticFertilising": 89
+}

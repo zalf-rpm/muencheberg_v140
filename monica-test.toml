@@ -1,0 +1,7 @@
+# Manifest for MONICA's test suite (tests/run.py in zalf-rpm/monica): which
+# simulations to run and how to compare their outputs between MONICA builds.
+sims = ["sim_files/sim*.json"]
+
+[compare]
+# exact equality unless a column below says otherwise
+default = { atol = 0.0, rtol = 0.0 }

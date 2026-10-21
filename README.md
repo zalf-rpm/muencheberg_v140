@@ -13,12 +13,16 @@ The current setup includes 48 simulations covering six treatment codes (10, 13, 
 | `site_files/` | Plot-specific soil profiles and site parameters. |
 | `climate_MUE.csv` | Daily weather inputs. |
 | `soil_corg_measured.csv` | Measured SOC values, identified by plot, treatment, and sampling date. |
+| `yield_measured.csv` | Measured crop yields in kg DM per hectare, identified by plot, treatment, and year. |
 | `run_monica.cmd` | Windows batch script that runs every `sim*.json` configuration. |
+| `obs_vs_sim_soc.py` | Matches SOC observations to daily simulation results, exports matched values, and plots comparisons by treatment. |
+| `obs_vs_sim_yield.py` | Matches yield observations to simulated harvest results, exports matched values, and plots comparisons by treatment. |
 
 ## Requirements
 
 - Windows for the supplied batch script.
 - A MONICA installation, including `monica-run.exe` and the matching `monica-parameters` directory.
+- Python 3.11 or newer and Matplotlib for the comparison scripts.
 
 The MONICA executable and its parameter library are external dependencies and are not included here.
 

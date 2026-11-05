@@ -74,7 +74,12 @@
 			"is-winter-crop": false,
 			"cropParams": {
 				"species": ["include-from-file", "crops/phacelia.json"],
-				"cultivar": ["include-from-file", "crops/phacelia/.json"]
+				"cultivar": {
+                    "=": ["include-from-file", "crops/phacelia/.json"],
+                    "OrganIdsForPrimaryYield": [
+                        {"organId": 4, "type": "YieldComponent", "yieldDryMatter": 0.86, "yieldPercentage": 0.80}
+                    ]
+                }
 			},
 			"residueParams": ["include-from-file", "crop-residues/phacelia/cover.json"]
 		
@@ -82,10 +87,13 @@
 		"ERB": {
 			"is-winter-crop": false,
 			"cropParams": {
-				"species": ["include-from-file", "crops/oat-compound.json"],
-				"cultivar": ["include-from-file", "crops/oat-compound/.json"]
+				"species": {
+                    "=": ["include-from-file", "crops/field-pea.json"],
+                    "CriticalOxygenContent": [0, 0, 0, 0, 0, 0]
+                },
+				"cultivar": ["include-from-file", "crops/field-pea/24.json"]
 			},
-			"residueParams": ["include-from-file", "crop-residues/oat.json"]
+			"residueParams": ["include-from-file", "crop-residues/pea.json"]
 		
 		}
 },

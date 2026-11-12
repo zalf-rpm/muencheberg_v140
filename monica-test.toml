@@ -5,3 +5,27 @@ sims = ["sim_files/sim*.json"]
 [compare]
 # exact equality unless a column below says otherwise
 default = { atol = 0.0, rtol = 0.0 }
+
+# Measurements to compare the simulations with (tests/validate.py in
+# zalf-rpm/monica). sim-map.csv names the simulation of each plot and treatment.
+[[observed]]
+name = "Yield"
+file = "yield_measured.csv"
+sim-map = "sim-map.csv"
+label = "T{treatment} {plot_no}"
+group = "crop"
+key = "year"
+value = "yield_dm_kg_ha"
+unit = "kg DM/ha"
+output = { section = "crop", column = "Yield", key = "harv-year" }
+
+[[observed]]
+name = "Soil organic carbon 0-30 cm"
+file = "soil_corg_measured.csv"
+sim-map = "sim-map.csv"
+label = "T{treatment} {plot_no}"
+group = "treatment"
+date = "sampling_date"
+value = "obs_corg_%"
+unit = "%"
+output = { section = "daily", column = "SOC_0_30_kgkg", scale = 100 }

@@ -15,6 +15,8 @@ The current setup includes 48 simulations covering six treatment codes (10, 13, 
 | `soil_corg_measured.csv` | Measured SOC values, identified by plot, treatment, and sampling date. |
 | `yield_measured.csv` | Measured crop yields in kg DM per hectare, identified by plot, treatment, and year. |
 | `run_monica.cmd` | Windows batch script that runs every `sim*.json` configuration. |
+| `sim-map.csv` | Which simulation (`sim_files/simN`) belongs to which plot and treatment. |
+| `monica-test.toml` | Manifest for MONICA's test suite (zalf-rpm/monica, `tests/`): the simulations to run and the measurements to compare them with; CI then reports statistics and plots of simulated vs measured yields and SOC. |
 | `obs_vs_sim_soc.py` | Matches SOC observations to daily simulation results, exports matched values, and plots comparisons by treatment. |
 | `obs_vs_sim_yield.py` | Matches yield observations to simulated harvest results, exports matched values, and plots comparisons by treatment. |
 
